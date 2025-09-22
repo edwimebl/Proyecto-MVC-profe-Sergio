@@ -1,18 +1,18 @@
 <?php   
 
+require_once "models/producto.php";
+
 class InicioControlador {
 
     private $modelo;
 
     public function __construct() {
-    // $this->modelo = new Producto();
+        $this->modelo = new Producto();
     }
 
 
     public function Inicio() {        
-
-        // Aquí puedes cargar la vista de inicio o realizar otras acciones necesarias
-        $bd = BaseDeDatos::Conectar();
+       
         //llamar los estilos y scripts
         require_once "views/encabezado.php";
         //llamar el controlador del inicio
