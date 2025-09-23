@@ -85,4 +85,20 @@ class Producto {
             die($e->getMessage());
         }
     }
+
+    public function Insertar(Producto $p) {
+        try {
+            $consulta = "INSERT INTO productos (pro_nom, pro_mar, pro_cos, pro_pre, pro_cant) VALUES (?, ?, ?, ?, ?)";
+            $this->pdo->prepare($consulta)
+            ->execute(array(
+                $p->getPro_nom(), 
+                $p->getPro_mar(), 
+                $p->getPro_cos(), 
+                $p->getPro_pre(), 
+                $p->getPro_cant()
+            ));
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
